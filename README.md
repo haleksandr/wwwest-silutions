@@ -3,6 +3,7 @@
 2) cd wwwest-silutions
 3) npm i
 4) npm start
+5) http://localhost:4200/
 
 ### Credentials:<br/>
 email: admin@gmail.com<br/>
