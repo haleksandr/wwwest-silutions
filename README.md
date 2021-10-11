@@ -4,6 +4,10 @@
 3) npm i
 4) npm start
 
+### Credentials:<br/>
+email: admin@gmail.com<br/>
+password: 123456<br/>
+
 Pages: <br/>
 **/** - main page.<br/><br/>
 **/profile** - this page has the guard security. When opening profile page as unauthorized user queryParams - loginWarn is added to the address bar and ***"You cannot get to the profile page until you login"*** validation message displays.<br/><br/>
