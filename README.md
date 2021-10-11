@@ -1,6 +1,6 @@
 #### How lounch the App on localhost:
-1) git clone git@github.com:haleksandr/wwwest-silutions.git
-2) cd wwwest-solutions
+1) git clone https://github.com/haleksandr/wwwest-silutions.git
+2) cd wwwest-silutions
 3) npm i
 4) npm start
 
