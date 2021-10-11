@@ -9,7 +9,7 @@ email: admin@gmail.com<br/>
 password: 123456<br/>
 >I changed the profile login settings as for firebase must be email/password not username/password and password must be at least 6 characters.
 
-Pages: <br/>
+### Pages: <br/>
 **/** - main page.<br/><br/>
 **/profile** - this page has the guard security. When opening profile page as unauthorized user queryParams - loginWarn is added to the address bar and ***"You cannot get to the profile page until you login"*** validation message displays.<br/><br/>
 **/news** - it is not necessary to be logged in to get to this page. A get request goes to newsapi.org and 20 news items are displayed when opening this page.<br/><br/>
