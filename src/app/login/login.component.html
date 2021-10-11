@@ -1,0 +1,75 @@
+<section class="form">
+  <form class="form-auth" [formGroup]="form" (ngSubmit)="submit()">
+    <div *ngIf="guardMessage" class="form-auth__guard-message">
+      <b>
+        {{ guardMessage }}
+      </b>
+    </div>
+
+    <div *ngIf="authService.error$" class="form-auth__errors-message">
+      <p>{{ errorMessage }}</p>
+    </div>
+
+    <div
+      class="form-auth__form-control"
+      [ngClass]="{
+        invalid: form.get('email').touched && form.get('email').invalid
+      }"
+    >
+      <input
+        id="email"
+        type="text"
+        placeholder="Enter you email"
+        formControlName="email"
+        [ngClass]="{ errorEmail: errorMessage === 'No such email!' }"
+      />
+      <div
+        *ngIf="form.get('email').touched && form.get('email').invalid"
+        class="form-auth__form-control__validation"
+      >
+        <small *ngIf="form.get('email').errors.required"
+          ><b>Email</b> is required!
+        </small>
+      </div>
+    </div>
+
+    <div
+      class="form-auth__form-control"
+      [ngClass]="{
+        invalid: form.get('password').touched && form.get('password').invalid
+      }"
+    >
+      <input
+        id="password"
+        type="password"
+        placeholder="Enter you password"
+        formControlName="password"
+        [ngClass]="{ errorPassword: errorMessage === 'Invalid password!' }"
+      />
+      <div
+        *ngIf="form.get('password').touched && form.get('password').invalid"
+        class="form-auth__form-control__validation"
+      >
+        <small *ngIf="form.get('password').errors.required">
+          <b>Password</b> is required
+        </small>
+
+        <small *ngIf="form.get('password').errors.minlength">
+          Password cannot be less than
+          <b>{{ form.get("password").errors.minlength.requiredLength }}</b>
+          characters, now
+          <b>{{ form.get("password").errors.minlength.actualLength }}</b>
+          characters
+        </small>
+      </div>
+    </div>
+
+    <button
+      class="form-auth__submit-btn"
+      type="submit"
+      [disabled]="form.invalid || isSubmited"
+    >
+      Login
+    </button>
+  </form>
+</section>

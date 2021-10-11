@@ -1,0 +1,25 @@
+<ng-template #loaderBlock>
+  <div class="preload-block">
+    <div class="preload-block__post"></div>
+    <div class="preload-block__post"></div>
+    <div class="preload-block__post"></div>
+    <div class="preload-block__post"></div>
+    <div class="preload-block__post"></div>
+    <div class="preload-block__post"></div>
+    <div class="preload-block__post"></div>
+    <div class="preload-block__post"></div>
+  </div>
+</ng-template>
+
+<section *ngIf="!isLoader; else loaderBlock" class="news">
+  <div class="news__post" *ngFor="let post of news">
+    <div class="news__post__about-post">
+      <p>{{ post.author || "unnamed author" }}</p>
+      <p>{{ post.publishedAt | date }}</p>
+    </div>
+    <small>Source: {{ post.source!.name }}</small>
+    <h3>{{ post.title }}</h3>
+    <img src="{{ post.urlToImage || this.defaultImage }}" alt="news image" />
+    <p>{{ post.content }}</p>
+  </div>
+</section>
