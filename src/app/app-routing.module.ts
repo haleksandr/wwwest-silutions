@@ -14,7 +14,11 @@ const routes: Routes = [
     component: HomeComponent,
   },
   { path: 'login', component: LoginComponent },
-  { path: 'news', component: NewsComponent },
+  {
+    path: 'news',
+    component: NewsComponent,
+    loadChildren: () => import('./news/news.module').then((m) => m.NewsModule),
+  },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: '**', pathMatch: 'full', component: NotFoundComponent },
 ];

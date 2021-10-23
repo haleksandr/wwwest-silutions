@@ -12,12 +12,12 @@ import { AuthService } from './shared/services/auth.service';
 import { SharedModule } from './shared/shared.module';
 import { AuthGuard } from './shared/services/auth.guard';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { NewsModule } from './news/news.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    NewsComponent,
     ProfileComponent,
     HomeComponent,
     LoginComponent,

@@ -30,6 +30,9 @@
         <small *ngIf="form.get('email').errors.required"
           ><b>Email</b> is required!
         </small>
+        <small *ngIf="form.get('email').errors.email"
+          ><b>Email</b> is not valid!
+        </small>
       </div>
     </div>
 
