@@ -1,27 +1,20 @@
-# WwwestSolutions
+#### How lounch the App on localhost:
+1) git clone https://github.com/haleksandr/wwwest-silutions.git
+2) cd wwwest-silutions
+3) npm i
+4) npm start
+5) http://localhost:4200/
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.1.
+### Credentials:<br/>
+email: admin@gmail.com<br/>
+password: 123456<br/>
+>I changed the profile login settings as for firebase must be email/password not username/password and password must be at least 6 characters.
 
-## Development server
+### Pages: <br/>
+**/** - main page.<br/><br/>
+**/profile** - this page has the guard security. When opening profile page as unauthorized user queryParams - loginWarn is added to the address bar and ***"You cannot get to the profile page until you login"*** validation message displays.<br/><br/>
+**/news** - it is not necessary to be logged in to get to this page. A get request goes to newsapi.org and 20 news items are displayed when opening this page.<br/><br/>
+**/login** -  when you go to this page there is a form in which you need to enter your email and password. This form also has validation. The email and password fields are required - if you click on the field and then remove the focus from it the ***"Email is required!/Password is required"*** validation message is displayed. Also, if you enter an invalid email the ***"Email is not valid!"*** validation message is displayed. If you enter an invalid email and a valid password the ***"No such email!"*** validation message is displayed and the field that contains the error will be highlighted in red, if you enter a valid email and an invalid password the ***"Invalid password!"*** validation message is displayed. Also, until the correct email and the password contains more than 4 characters is entered the "Login" button is disabled. After entering correct email, password and clicking the "Login" button the "Login" button will be disabled until a response from the server about successful authorization or error is received to avoid multiple clicks the "Login" button while the server is processing the request. After successful authorization, 2 tokens will be written to loalStorage: (token and token-exp), token-exp lasts an hour, after which it will need to be re-logged. Both tokens are removed from localStorage when the logout button is clicked. Also, after successful authorization, you can go to the '/profile' page.<br/><br/>
+**/404** - a component will be displayed that says that this page was not found and offers to return to the home page if entering an incorrect route after "http://localhost:4200/" in the search bar
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
